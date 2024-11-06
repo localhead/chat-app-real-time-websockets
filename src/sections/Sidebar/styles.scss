@@ -1,0 +1,12 @@
+.sidebar {
+  width: 100%;
+}
+
+.top-container {
+  display: flex;
+  border-bottom: 1px solid $dark;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@include scrollbar-light;

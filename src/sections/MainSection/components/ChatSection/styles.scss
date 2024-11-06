@@ -1,0 +1,9 @@
+.container-messages {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+
+  @include scrollbar-default;
+}
