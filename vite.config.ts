@@ -14,6 +14,7 @@ export default defineConfig({
       },
     },
   },
+  base: "https://github.com/localhead/chat-app-real-time-websockets.git",
   plugins: [
     react(),
     svgr({
