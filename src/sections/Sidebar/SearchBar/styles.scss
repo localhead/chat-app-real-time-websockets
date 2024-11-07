@@ -1,5 +1,5 @@
 .input {
-  background: $gray-2;
+  background: $gray-0;
   border-radius: 18px;
 
   border: none;
@@ -12,12 +12,12 @@
 
   &:hover {
     border-color: $dark;
-    background-color: #f1f1f1;
   }
 
   &:focus {
     border-bottom: 1px solid $dark;
     outline: $dark;
+    background-color: $white;
     box-shadow: 0 0 5px rgba(15, 15, 15, 0.5);
   }
 }

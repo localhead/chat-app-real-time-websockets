@@ -1,14 +1,16 @@
 import React, { FC, memo, useEffect, useRef, useState } from "react";
 
 import { textAreaStyles } from "./calcStyles";
-import "./styles.scss";
+
+import { SendMessageIcon } from "../../../../packages/icons";
+import styles from "./styles.module.scss";
 
 export interface MessageCreationSectionProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const MAX_TEXTAREA_HEIGHT = 350;
+const MAX_TEXTAREA_HEIGHT = 150;
 
 const ws = new WebSocket(
   "wss://social-network.samuraijs.com/handlers/ChatHandler.ashx"
@@ -22,16 +24,26 @@ const _MessageCreationSection: FC<MessageCreationSectionProps> = (props) => {
   const [message, setMessage] = useState<string>("");
 
   const clickHandlerMessage = () => {
-    ws.send("фыыыы");
+    if (message.trim() !== "") {
+      ws.send(message);
+      setMessage("");
+    }
   };
 
   const textAreaChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      clickHandlerMessage();
+    }
+  };
+
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto"; // Reset height before calculating
+      textareaRef.current.style.height = "auto";
       const newHeight = Math.min(
         textareaRef.current.scrollHeight,
         MAX_TEXTAREA_HEIGHT
@@ -41,15 +53,18 @@ const _MessageCreationSection: FC<MessageCreationSectionProps> = (props) => {
   }, [message]); // Trigger re-calculation whenever message changes
 
   return (
-    <div className="container" {...restProps}>
+    <div className={styles.container} {...restProps}>
       <textarea
         value={message}
         onChange={textAreaChangeHandler}
+        onKeyDown={handleKeyDown}
         style={textAreaStyles(message, MAX_TEXTAREA_HEIGHT)}
-        className="textarea"
+        className={styles.textarea}
         ref={textareaRef}
       />
-      <button onClick={clickHandlerMessage}>Send</button>
+      <button onClick={clickHandlerMessage} className={styles.button}>
+        <SendMessageIcon size={35} />
+      </button>
     </div>
   );
 };

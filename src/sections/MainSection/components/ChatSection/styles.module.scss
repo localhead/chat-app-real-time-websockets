@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+
+  height: 100%;
+
+  padding-right: 15px;
+  @include scrollbar-default();
+}
+
+.loader {
+  height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  .loader-title {
+    position: absolute;
+    top: 50%;
+
+    transform: translate(5%, 280%);
+    color: $white;
+
+    font-size: 16px;
+    font-weight: 300;
+  }
+}

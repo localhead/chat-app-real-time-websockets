@@ -2,8 +2,7 @@ import { useMemo } from "react";
 import { ChatMessageItem } from "../../ChatMessageItem";
 import { MessageRecord } from "../types";
 
-export const useGetMessagesList = (messages: MessageRecord[] | []) => {
-  if (!messages) return [];
+export const useGetMessagesList = (messages: MessageRecord[]) => {
   return useMemo(() => {
     return messages.map((item, index) => {
       return (
@@ -16,5 +15,5 @@ export const useGetMessagesList = (messages: MessageRecord[] | []) => {
         />
       );
     });
-  }, []);
+  }, [messages]);
 };

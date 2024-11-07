@@ -58,29 +58,6 @@
   font-style: normal;
 }
 
-@mixin scrollbar-default {
-  body::-webkit-scrollbar {
-    width: 16px;
-  }
-
-  body::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: 8px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    height: 56px;
-    border-radius: 8px;
-    border: 4px solid transparent;
-    background-clip: content-box;
-    background-color: #17171a;
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    background-color: #bbbbbb;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -89,9 +66,9 @@ body {
   font-weight: 300;
 
   background: $background-color;
-}
 
-@include scrollbar-default;
+  @include scrollbar-default();
+}
 
 .main-container {
   width: 100%;

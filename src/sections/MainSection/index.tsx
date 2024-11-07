@@ -1,6 +1,7 @@
-import React, { FC, memo } from "react";
+import React, { FC } from "react";
 
 import { ChatSection } from "./components/ChatSection";
+import { Header } from "./components/Header";
 import { MessageCreationSection } from "./components/MessageCreationSection";
 import "./styles.scss";
 
@@ -9,17 +10,17 @@ interface MainSectionProps {
   style?: React.CSSProperties;
 }
 
-const _MainSection: FC<MainSectionProps> = (props) => {
+export const MainSection: FC<MainSectionProps> = (props) => {
   const { ...restProps } = props;
 
   return (
     <div className="main-section" {...restProps}>
+      <Header />
       <div className="inner">
+        <div style={{ height: "50px" }} />
         <ChatSection />
         <MessageCreationSection />
       </div>
     </div>
   );
 };
-
-export const MainSection = memo(_MainSection);
