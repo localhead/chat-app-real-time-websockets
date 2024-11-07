@@ -1,7 +1,11 @@
 import React, { FC, memo } from "react";
 import { ListCatalogIcon } from "../../packages/icons";
-import { SearchBar } from "./SearchBar";
-import "./styles.scss";
+
+import { ContactsList } from "./ContactsList";
+import { SearchInput } from "./SearchInput";
+import { tabMock } from "./constants";
+import { useGetTabNodes } from "./hooks/useGetTabNodes";
+import styles from "./styles.module.scss";
 
 interface SidebarProps {
   className?: string;
@@ -11,16 +15,16 @@ interface SidebarProps {
 const _Sidebar: FC<SidebarProps> = (props) => {
   const { ...restProps } = props;
 
+  const tabNodes = useGetTabNodes(tabMock);
+
   return (
-    <div className="sidebar" {...restProps}>
-      <div className="top-container">
-        <div className="list-icon-container">
-          <ListCatalogIcon size={50} />
-        </div>
-        <div className="search-container">
-          <SearchBar />
-        </div>
+    <div className={styles.sidebar} {...restProps}>
+      <div className={styles["top-container"]}>
+        <ListCatalogIcon size={35} className={styles["list-icon"]} />
+        <SearchInput />
       </div>
+      <div className={styles["tabs-list"]}>{tabNodes}</div>
+      <ContactsList />
     </div>
   );
 };

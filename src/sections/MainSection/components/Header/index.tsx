@@ -1,15 +1,15 @@
 import React, { FC, memo } from "react";
 
-import { placeHolderImage } from "../../../../utils/constantsGlobal";
+import {
+  placeHolderImage,
+  sunflowerLink,
+} from "../../../../utils/constantsGlobal";
 import styles from "./styles.module.scss";
 
 interface HeaderProps {
   className?: string;
   style?: React.CSSProperties;
 }
-
-const sunflowerLink =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sunflower_Taleghan.jpg/800px-Sunflower_Taleghan.jpg";
 
 const _Header: FC<HeaderProps> = (props) => {
   const { ...restProps } = props;

@@ -4,6 +4,8 @@ import placeholderWhite from "../assets/images/placeholderImageWhite.jpg";
 
 type PlaceHolderRecord = "white" | "gray" | "dark";
 
+export const INIT_CHAT_ID = 4;
+
 export const placeHolderImage = (type: PlaceHolderRecord) => {
   switch (type) {
     case "dark": {
@@ -20,3 +22,6 @@ export const placeHolderImage = (type: PlaceHolderRecord) => {
       return placeholderDark;
   }
 };
+
+export const sunflowerLink =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sunflower_Taleghan.jpg/800px-Sunflower_Taleghan.jpg";

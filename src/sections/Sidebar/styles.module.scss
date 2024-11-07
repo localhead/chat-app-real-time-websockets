@@ -1,0 +1,37 @@
+.sidebar {
+  width: 100%;
+  padding-top: 12px;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+.top-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-bottom: 1px solid $dark;
+  gap: 15px;
+  padding-right: 30px;
+  align-items: center;
+}
+
+.list-icon {
+  cursor: pointer;
+}
+
+.tabs-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  width: fit-content;
+  height: 55px;
+
+  margin-top: 15px;
+  padding-bottom: 8px;
+
+  max-width: 400px;
+
+  @include scrollbar-light();
+}

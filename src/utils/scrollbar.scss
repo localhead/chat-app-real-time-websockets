@@ -20,6 +20,7 @@
 @mixin scrollbar-light {
   &::-webkit-scrollbar {
     width: 10px;
+    height: 7px;
   }
 
   &::-webkit-scrollbar-track {
@@ -29,6 +30,7 @@
   &::-webkit-scrollbar-thumb {
     background-color: #a5a5a5;
     border-radius: 8px;
+    cursor: pointer;
   }
 
   &::-webkit-scrollbar-thumb:hover {

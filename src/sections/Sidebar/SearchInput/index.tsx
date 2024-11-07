@@ -1,13 +1,13 @@
 import React, { FC, memo, useState } from "react";
 
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 interface SearchBarProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const _SearchBar: FC<SearchBarProps> = (props) => {
+const _SearchInput: FC<SearchBarProps> = (props) => {
   const { ...restProps } = props;
 
   const [value, setValue] = useState<string>("");
@@ -17,15 +17,14 @@ const _SearchBar: FC<SearchBarProps> = (props) => {
   };
 
   return (
-    <div className="search-bar" {...restProps}>
-      <input
-        className="input"
-        value={value}
-        placeholder="Поиск..."
-        onChange={onChangeHandler}
-      />
-    </div>
+    <input
+      className={styles.input}
+      value={value}
+      placeholder="Поиск..."
+      onChange={onChangeHandler}
+      {...restProps}
+    />
   );
 };
 
-export const SearchBar = memo(_SearchBar);
+export const SearchInput = memo(_SearchInput);

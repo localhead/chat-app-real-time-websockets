@@ -16,8 +16,8 @@
 
   &:focus {
     border-bottom: 1px solid $dark;
-    outline: $dark;
+    outline: $gray-2;
     background-color: $white;
-    box-shadow: 0 0 5px rgba(15, 15, 15, 0.5);
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.4);
   }
 }
