@@ -1,5 +1,5 @@
 # Real-Time Web Chat with React, TypeScript, and Vite
-
+## 
 This project is a simple real-time chat application, similar to Telegram, created using React, TypeScript, and Vite. The app leverages browser WebSockets for real-time communication, allowing multiple users to send messages and see updates instantly without needing to refresh or make additional HTTP requests.
 ![websockets](https://github.com/user-attachments/assets/fc7e2476-cd8c-42a4-a90d-22cb8cfea53b)
 ## Features
